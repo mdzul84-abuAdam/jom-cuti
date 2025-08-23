@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulau Pangkor: Itinerari 3 Hari Kumpulan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8ff; /* Latar belakang biru muda */
+        }
+        /* Gaya tersuai untuk ikon aktiviti - menggunakan emoji sebagai pengganti untuk kesederhanaan */
+        .icon-cultural::before { content: '🕌'; } /* Ikon sejarah/budaya untuk masjid */
+        .icon-food::before { content: '🦐'; } /* Ikon makanan laut */
+        .icon-outdoor::before { content: '🏝️'; } /* Ikon pulau/pantai */
+        .icon-fishing::before { content: '🎣'; } /* Ikon memancing */
+        .icon-shopping::before { content: '🛍️'; }
+        .icon-kids::before { content: '🧒'; } /* Ikon kanak-kanak */
+        .icon-time::before { content: '⏰'; }
+
+        /* Gaya untuk tooltip (pop-up kiraan bajet) */
+        .budget-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            z-index: 1000;
+            transition: opacity 0.3s;
+            pointer-events: none; /* Memastikan tooltip tidak menghalang hover pada elemen lain */
+            white-space: nowrap; /* Mengelakkan teks pecah baris */
+            font-size: 0.875rem; /* Saiz teks yang lebih kecil */
+        }
+        .budget-item:hover .budget-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Bahagian Header dengan Latar Belakang Gambar -->
+        <div class="p-6 sm:p-8 text-white text-center rounded-t-xl bg-cover bg-center"
+             style="background-image: url('https://placehold.co/800x200/2A737E/FFFFFF?text=Pulau+Pangkor'); height: 200px;">
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 drop-shadow-lg">Pengembaraan Pulau di Pangkor!</h1>
+            <p class="text-lg sm:text-xl font-medium drop-shadow-lg">Itinerari Bajet Sederhana 3 Hari Anda untuk 20 Pax (Kanak-kanak 5-15 tahun)</p>
+            <p class="text-sm mt-2 italic drop-shadow-lg">(Anggaran bajet aktiviti & pengangkutan disediakan, harga boleh berubah.)</p>
+        </div>
+
+        <!-- Kontena Kad Itinerari -->
+        <div class="p-4 sm:p-6 lg:p-8 grid gap-6">
+
+            <!-- Kad Hari 1 -->
+            <div class="bg-blue-100 p-5 rounded-lg shadow-md border-l-8 border-blue-500">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Hari 1: Ketibaan & Pesona Pantai</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-blue-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>Ketibaan di Jeti Lumut, naik feri ke Pulau Pangkor.</li>
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>Daftar Masuk: Di penginapan Pantai Pasir Bogak / Teluk Nipah.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-blue-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>Makan Tengah Hari: Hidangan tempatan di gerai tepi pantai.</li>
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>Bersantai di Pantai: Main pasir, mandi-manda di air yang jernih.</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>Permainan Pantai: Bina istana pasir, bermain bola pantai.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-blue-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>Makan Malam BBQ Makanan Laut: Di restoran tepi pantai atau di resort.</li>
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>Menikmati Pemandangan Malam: Berjalan-jalan santai di pantai.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kad Hari 2 -->
+            <div class="bg-teal-100 p-5 rounded-lg shadow-md border-l-8 border-teal-500">
+                <h2 class="text-2xl font-bold text-teal-800 mb-4">Hari 2: Kembara Pulau & Cabaran Memancing</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-teal-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>Island Hopping: Melawat pulau-pulau kecil seperti Pulau Giam (snorkeling).</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>Mencari Hidupan Laut: Aktiviti menarik untuk kanak-kanak di tepi pantai pulau.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-teal-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>Makan Tengah Hari: Hidangan tempatan di restoran Teluk Gedung.</li>
+                            <li class="flex items-start"><span class="icon-fishing text-lg mr-2"></span>Aktiviti Memancing: Sewa bot untuk memancing di perairan Pangkor (sesuai keluarga).</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>Belajar Jenis Ikan: Kanak-kanak belajar tentang ikan yang ditangkap.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-teal-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>Makan Malam: Menikmati hidangan ikan bakar atau masakan tempatan.</li>
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>Melihat Burung Enggang: Di beberapa kawasan terpilih di Pulau Pangkor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kad Hari 3 -->
+            <div class="bg-emerald-100 p-5 rounded-lg shadow-md border-l-8 border-emerald-500">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-4">Hari 3: Warisan & Perpisahan Pulau</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-emerald-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-emerald-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>Kota Belanda (Dutch Fort): Lawatan ke tinggalan sejarah.</li>
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>Kuil Foo Lin Kong: Terokai seni bina dan suasana tenang.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-emerald-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-emerald-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>Makan Tengah Hari: Hidangan terakhir di bandar Pangkor.</li>
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>Lawatan Budaya: Melawat Masjid Sejuta Selawat (Masjid Al-Badr Seribu Selawat), kagumi seni bina Islam moden.</li>
+                            <li class="flex items-start"><span class="icon-shopping text-lg mr-2"></span>Membeli Cenderamata & Hasil Laut Kering: Di pekan Pangkor.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-emerald-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-emerald-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-time text-lg mr-2"></span>Daftar Keluar & Berangkat Pulang: Menaiki feri kembali ke Lumut.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Ringkasan Anggaran Bajet Aktiviti -->
+            <div class="bg-purple-50 p-6 rounded-lg shadow-md border-l-8 border-purple-600 mt-6 relative">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4 text-center">Ringkasan Anggaran Bajet Aktiviti</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Untuk 20 Pax, tidak termasuk pengangkutan utama & penginapan. Harga adalah anggaran & boleh berubah.)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800">
+                    <div class="flex justify-between items-center bg-purple-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Island Hopping (termasuk snorkeling): RM30-RM50/pax x 20 = RM600-RM1,000. Lawatan ke masjid biasanya tiada bayaran masuk. Sewa bot memancing (4 jam): RM200-RM400 (untuk kumpulan).">
+                        <span class="font-medium">Tiket Tarikan & Aktiviti (Island Hopping, Memancing, Lawatan Masjid):</span>
+                        <span class="font-bold">RM800 - RM1,400</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-purple-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Anggaran RM20-40/pax untuk makan tengah hari (3x), RM30-60/pax untuk makan malam (2x, termasuk BBQ).">
+                        <span class="font-medium">Makanan (9 Hidangan + BBQ):</span>
+                        <span class="font-bold">RM2,100 - RM4,200</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-purple-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Perbelanjaan peribadi untuk snek, cenderamata, hasil laut kering Pangkor.">
+                        <span class="font-medium">Membeli-belah & Cenderamata:</span>
+                        <span class="font-bold">RM700 - RM1,500 (Perbelanjaan peribadi)</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-purple-200 p-3 rounded-md shadow-md col-span-1 sm:col-span-2">
+                        <span class="font-bold text-lg text-purple-900">Anggaran Kasar Jumlah Aktiviti:</span>
+                        <span class="font-bold text-lg text-purple-900">RM3,600 - RM7,100</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Cadangan Penginapan di Pulau Pangkor -->
+            <div class="bg-cyan-50 p-6 rounded-lg shadow-md border-l-8 border-cyan-600 mt-6 relative">
+                <h2 class="text-2xl font-bold text-cyan-800 mb-4 text-center">Cadangan Penginapan (Untuk 20 Pax, Bajet Sederhana)</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Pulau Pangkor. Harga adalah anggaran semalam & boleh berubah. Tempah awal untuk kumpulan besar!)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-800">
+                    <div class="flex flex-col justify-center items-center bg-cyan-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/D1F8F9/007B8C?text=Resort" alt="Ikon Resort Tepi Pantai" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Resort / Hotel Tepi Pantai</span>
+                        <span class="text-sm text-gray-600 text-center">(Pantai Pasir Bogak / Teluk Nipah)</span>
+                        <span class="font-bold mt-1">RM500 - RM1,500+ (beberapa bilik)</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-cyan-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/B3E5FC/03A9F4?text=Chalet" alt="Ikon Chalet Keluarga" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Chalet / Rumah Peranginan</span>
+                        <span class="text-sm text-gray-600 text-center">(Ruang luas, sesuai untuk keluarga besar)</span>
+                        <span class="font-bold mt-1">RM400 - RM1,000+ (beberapa unit)</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-cyan-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/E0F2F7/00BCD4?text=Homestay" alt="Ikon Homestay Kumpulan" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Homestay / Villa Kumpulan</span>
+                        <span class="text-sm text-gray-600 text-center">(Penginapan lebih peribadi & bajet)</span>
+                        <span class="font-bold mt-1">RM300 - RM800+ (per unit)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Perbandingan Bajet Pengangkutan -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md border-l-8 border-gray-400 mt-6 relative">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Perbandingan Bajet Pengangkutan (Ke & Di Pulau Pangkor)</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Harga adalah anggaran pergi balik untuk 3 hari perjalanan. Tidak termasuk pengangkutan ke Jeti Lumut.)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800">
+                    <div class="flex flex-col justify-center items-center bg-gray-200 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Tambang Feri Lumut-Pangkor: RM14/pax x 20 = RM280. Teksi Pink Pangkor: RM20-RM40/trip (anggaran 5-10 trip sehari x 3 hari = RM300-RM1,200).">
+                        <img src="https://placehold.co/60x60/A7D3EB/1E40AF?text=Feri/Teksi" alt="Ikon Feri dan Teksi" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Feri & Pengangkutan Pulau (3 hari):</span>
+                        <span class="font-bold">RM580 - RM1,480</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-gray-200 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Sewa Bas Mini (20-25 seater dengan pemandu) dari tempat asal ke Jeti Lumut: RM900-RM2,500. Atau kereta persendirian ke Lumut: RM300-RM700 (minyak & tol untuk 5 kereta).">
+                        <img src="https://placehold.co/60x60/BEE3F8/2B6CB0?text=Bas/Kereta" alt="Ikon Bas Mini atau Kereta Persendirian" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Bas Mini / Kereta Persendirian (ke Lumut):</span>
+                        <span class="font-bold">RM300 - RM2,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pautan Kembali ke Senarai Destinasi -->
+            <div class="flex justify-center items-center p-4 mt-6 bg-gray-100 rounded-lg shadow-md">
+                <a href="senarai_destinasi.html" class="text-gray-700 font-semibold text-base sm:text-lg hover:text-blue-600 hover:underline">← Kembali ke Senarai Destinasi</a>
+            </div>
+
+            <!-- Bahagian Footer -->
+            <div class="text-center p-4 text-gray-600 text-sm">
+                <p>&copy; 2025 Kembara Kumpulan Sanusi. Hak cipta terpelihara.</p>
+                <p>Selamat menikmati pengembaraan anda di Pulau Pangkor!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="budgetTooltip" class="budget-tooltip"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const budgetItems = document.querySelectorAll('.budget-item');
+            const tooltip = document.getElementById('budgetTooltip');
+
+            budgetItems.forEach(item => {
+                item.addEventListener('mouseenter', (e) => {
+                    const detail = item.getAttribute('data-detail');
+                    if (detail) {
+                        tooltip.innerHTML = detail;
+                        // Position the tooltip
+                        const rect = item.getBoundingClientRect();
+                        tooltip.style.left = `${rect.left + window.scrollX + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+                        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 10}px`; // 10px above the item
+                        
+                        // Adjust if it goes off screen left
+                        if (parseFloat(tooltip.style.left) < 0) {
+                            tooltip.style.left = '0px';
+                        }
+                        // Adjust if it goes off screen right
+                        if (parseFloat(tooltip.style.left) + tooltip.offsetWidth > window.innerWidth) {
+                            tooltip.style.left = `${window.innerWidth - tooltip.offsetWidth}px`;
+                        }
+                        
+                        tooltip.style.visibility = 'visible';
+                        tooltip.style.opacity = '1';
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
