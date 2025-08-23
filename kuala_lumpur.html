@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuala Lumpur: Itinerari 3 Hari Kumpulan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Latar belakang kelabu cerah */
+        }
+        /* Gaya tersuai untuk ikon aktiviti - menggunakan emoji sebagai pengganti untuk kesederhanaan */
+        .icon-cultural::before { content: '🕌'; } /* Ikon kebudayaan bandar */
+        .icon-food::before { content: '🍜'; } /* Ikon makanan */
+        .icon-outdoor::before { content: '🏙️'; } /* Ikon bandar/outdoor bandar */
+        .icon-shopping::before { content: '🛍️'; }
+        .icon-kids::before { content: '🧒'; } /* Ikon kanak-kanak */
+        .icon-time::before { content: '⏰'; }
+
+        /* Gaya untuk tooltip (pop-up kiraan bajet) */
+        .budget-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            z-index: 1000;
+            transition: opacity 0.3s;
+            pointer-events: none; /* Memastikan tooltip tidak menghalang hover pada elemen lain */
+            white-space: nowrap; /* Mengelakkan teks pecah baris */
+            font-size: 0.875rem; /* Saiz teks yang lebih kecil */
+        }
+        .budget-item:hover .budget-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Bahagian Header dengan Latar Belakang Gambar -->
+        <div class="p-6 sm:p-8 text-white text-center rounded-t-xl bg-cover bg-center"
+             style="background-image: url('https://placehold.co/800x200/3A4B5C/FFFFFF?text=Kuala+Lumpur+Skyline'); height: 200px;">
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 drop-shadow-lg">Keriangan Keluarga di Kuala Lumpur!</h1>
+            <p class="text-lg sm:text-xl font-medium drop-shadow-lg">Itinerari Bajet Sederhana 3 Hari Anda untuk 20 Pax (Kanak-kanak 5-15 tahun)</p>
+            <p class="text-sm mt-2 italic drop-shadow-lg">(Anggaran bajet aktiviti & pengangkutan disediakan, harga boleh berubah.)</p>
+        </div>
+
+        <!-- Kontena Kad Itinerari -->
+        <div class="p-4 sm:p-6 lg:p-8 grid gap-6">
+
+            <!-- Kad Hari 1 -->
+            <div class="bg-purple-100 p-5 rounded-lg shadow-md border-l-8 border-purple-500">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">Hari 1: Ketibaan & Denyutan Nadi Bandar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-purple-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-purple-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>**Ketibaan & Daftar Masuk:** Settle down di penginapan bandar.</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>**Jelajah Kawasan Berdekatan:** Kenali persekitaran tempat tinggal.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-purple-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-purple-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>**Makan Tengah Hari:** Citarasa tempatan di restoran/food court.</li>
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>**Petaling Street (Chinatown):** Alami budaya, beli-belah & nikmati snek.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-purple-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-purple-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>**Makan Malam:** Terokai pelbagai makanan di **Jalan Alor**.</li>
+                            <li class="flex items-start"><span class="icon-shopping text-lg mr-2"></span>**Pasar Malam/Street Market:** (Jika ada) cari cenderamata & barangan unik.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kad Hari 2 -->
+            <div class="bg-pink-100 p-5 rounded-lg shadow-md border-l-8 border-pink-500">
+                <h2 class="text-2xl font-bold text-pink-800 mb-4">Hari 2: Keajaiban & Kesenian Bandar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-pink-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-pink-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>**Perdana Botanical Garden:** Nikmati kehijauan & alam di tengah bandar.</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>**Aquaria KLCC:** Terokai kehidupan marin yang menakjubkan.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-pink-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-pink-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>**Makan Tengah Hari:** Pelbagai pilihan di **Central Market**.</li>
+                            <li class="flex items-start"><span class="icon-cultural text-lg mr-2"></span>**Central Market:** Beli-belah kraf tangan, seni, & cenderamata unik.</li>
+                            <li class="flex items-start"><span class="icon-shopping text-lg mr-2"></span>**Pasar Seni:** Terokai galeri seni & pameran budaya.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-pink-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-pink-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>**Makan Malam:** Restoran di Bukit Bintang / Jalan Imbi.</li>
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>**KL Tower (Menara Kuala Lumpur):** Nikmati pemandangan kota dari dek pemerhatian.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kad Hari 3 -->
+            <div class="bg-red-100 p-5 rounded-lg shadow-md border-l-8 border-red-500">
+                <h2 class="text-2xl font-bold text-red-800 mb-4">Hari 3: Ikon Bandar & Perpisahan</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pagi -->
+                    <div class="bg-red-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-red-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Pagi</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-outdoor text-lg mr-2"></span>**Petronas Twin Towers & KLCC Park:** Sesi bergambar & bersantai di taman.</li>
+                            <li class="flex items-start"><span class="icon-kids text-lg mr-2"></span>**Taman Permainan Kanak-kanak KLCC:** Bermain di taman air dan *playground*.</li>
+                        </ul>
+                    </div>
+                    <!-- Tengah Hari/Petang -->
+                    <div class="bg-red-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-red-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Tengah Hari/Petang</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-shopping text-lg mr-2"></span>**Membeli-belah Terakhir:** Di Suria KLCC / Pavilion / pusat beli-belah Bukit Bintang.</li>
+                            <li class="flex items-start"><span class="icon-food text-lg mr-2"></span>**Makan Tengah Hari:** Hidangan terakhir di food court pusat beli-belah.</li>
+                        </ul>
+                    </div>
+                    <!-- Malam -->
+                    <div class="bg-red-50 p-4 rounded-md shadow-sm">
+                        <h3 class="text-xl font-semibold text-red-700 mb-2 flex items-center"><span class="icon-time mr-2"></span>Malam</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-start"><span class="icon-time text-lg mr-2"></span>**Daftar Keluar & Berangkat Pulang:** Bawa pulang kenangan indah dari KL.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Ringkasan Anggaran Bajet Aktiviti -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md border-l-8 border-indigo-600 mt-6 relative">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-4 text-center">Ringkasan Anggaran Bajet Aktiviti</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Untuk 20 Pax, tidak termasuk pengangkutan utama & penginapan. Harga adalah anggaran & boleh berubah.)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800">
+                    <div class="flex justify-between items-center bg-indigo-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Aquaria KLCC: RM60/pax x 20 = RM1,200. KL Tower: RM40/pax x 20 = RM800.">
+                        <span class="font-medium">Tiket Tarikan (Aquaria KLCC, KL Tower):</span>
+                        <span class="font-bold">RM1,800 - RM2,500</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-indigo-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Anggaran RM25-40/pax untuk makan tengah hari (3x), RM30-50/pax untuk makan malam (2x).">
+                        <span class="font-medium">Makanan (9 Hidangan):</span>
+                        <span class="font-bold">RM4,500 - RM7,000</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-indigo-100 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Perbelanjaan peribadi untuk snek, cenderamata, membeli-belah di pasar/pusat beli-belah.">
+                        <span class="font-medium">Membeli-belah & Cenderamata:</span>
+                        <span class="font-bold">RM700 - RM1,600 (Perbelanjaan peribadi)</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-indigo-200 p-3 rounded-md shadow-md col-span-1 sm:col-span-2">
+                        <span class="font-bold text-lg text-indigo-900">Anggaran Kasar Jumlah Aktiviti:</span>
+                        <span class="font-bold text-lg text-indigo-900">RM7,000 - RM11,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Cadangan Penginapan di Kuala Lumpur -->
+            <div class="bg-sky-50 p-6 rounded-lg shadow-md border-l-8 border-sky-600 mt-6 relative">
+                <h2 class="text-2xl font-bold text-sky-800 mb-4 text-center">Cadangan Penginapan (Untuk 20 Pax, Bajet Sederhana)</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Kuala Lumpur. Harga adalah anggaran semalam & boleh berubah. Tempah awal untuk kumpulan besar!)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-800">
+                    <div class="flex flex-col justify-center items-center bg-sky-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/D1F8F9/007B8C?text=Apartmen" alt="Ikon Serviced Apartment" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Serviced Apartment / Condo</span>
+                        <span class="text-sm text-gray-600 text-center">(Ruang luas, kemudahan memasak, dekat KLCC/Bukit Bintang)</span>
+                        <span class="font-bold mt-1">RM500 - RM1,500+ (per unit)</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-sky-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/B3E5FC/03A9F4?text=Hotel" alt="Ikon Hotel Keluarga" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Hotel Mid-range (Bilik Keluarga/Bersambung)</span>
+                        <span class="text-sm text-gray-600 text-center">(Kemudahan hotel, beberapa bilik diperlukan)</span>
+                        <span class="font-bold mt-1">RM400 - RM1,000+ (beberapa bilik)</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-sky-100 p-3 rounded-md shadow-sm">
+                        <img src="https://placehold.co/60x60/E0F2F7/00BCD4?text=Hostel" alt="Ikon Hostel/Budget Hotel" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Budget Hotel / Hostel (Bilik Peribadi)</span>
+                        <span class="text-sm text-gray-600 text-center">(Pilihan bajet ketat, beberapa bilik diperlukan)</span>
+                        <span class="font-bold mt-1">RM200 - RM600+ (beberapa bilik)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Perbandingan Bajet Pengangkutan Dalam Bandar -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md border-l-8 border-gray-400 mt-6 relative">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Perbandingan Bajet Pengangkutan Dalam Bandar (Untuk Kumpulan)</h2>
+                <p class="text-sm text-gray-700 mb-4 text-center">
+                    (Kuala Lumpur. Harga adalah anggaran untuk 3 hari perjalanan. Tidak termasuk pengangkutan ke/dari KL.)
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800">
+                    <div class="flex flex-col justify-center items-center bg-gray-200 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Pengangkutan Awam (LRT/MRT/Bas) untuk 20 pax: Anggaran RM1,000 - RM2,000. Grab/Teksi (beberapa kereta) untuk 20 pax: Anggaran RM1,500 - RM3,500.">
+                        <img src="https://placehold.co/60x60/A7D3EB/1E40AF?text=Pengangkutan+Awam" alt="Ikon Pengangkutan Awam" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Pengangkutan Awam / Grab (3 hari):</span>
+                        <span class="font-bold">RM1,000 - RM3,500</span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-gray-200 p-3 rounded-md shadow-sm budget-item relative"
+                         data-detail="Sewa Bas Mini (20-25 seater dengan pemandu) untuk 3 hari: RM1,800 - RM3,000.">
+                        <img src="https://placehold.co/60x60/BEE3F8/2B6CB0?text=Bas+Mini" alt="Ikon Bas Mini Sewa" class="w-12 h-12 mb-2 object-contain">
+                        <span class="font-medium text-center">Sewa Bas Mini (3 hari, dengan pemandu):</span>
+                        <span class="font-bold">RM1,800 - RM3,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pautan Kembali ke Senarai Destinasi -->
+            <div class="flex justify-center items-center p-4 mt-6 bg-gray-100 rounded-lg shadow-md">
+                <a href="senarai_destinasi.html" class="text-gray-700 font-semibold text-base sm:text-lg hover:text-blue-600 hover:underline">← Kembali ke Senarai Destinasi</a>
+            </div>
+
+            <!-- Bahagian Footer -->
+            <div class="text-center p-4 text-gray-600 text-sm">
+                <p>&copy; 2025 Kembara Kumpulan Sanusi. Hak cipta terpelihara.</p>
+                <p>Selamat menikmati pengembaraan anda di Kuala Lumpur!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="budgetTooltip" class="budget-tooltip"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const budgetItems = document.querySelectorAll('.budget-item');
+            const tooltip = document.getElementById('budgetTooltip');
+
+            budgetItems.forEach(item => {
+                item.addEventListener('mouseenter', (e) => {
+                    const detail = item.getAttribute('data-detail');
+                    if (detail) {
+                        tooltip.innerHTML = detail;
+                        // Position the tooltip
+                        const rect = item.getBoundingClientRect();
+                        tooltip.style.left = `${rect.left + window.scrollX + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+                        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 10}px`; // 10px above the item
+                        
+                        // Adjust if it goes off screen left
+                        if (parseFloat(tooltip.style.left) < 0) {
+                            tooltip.style.left = '0px';
+                        }
+                        // Adjust if it goes off screen right
+                        if (parseFloat(tooltip.style.left) + tooltip.offsetWidth > window.innerWidth) {
+                            tooltip.style.left = `${window.innerWidth - tooltip.offsetWidth}px`;
+                        }
+                        
+                        tooltip.style.visibility = 'visible';
+                        tooltip.style.opacity = '1';
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
